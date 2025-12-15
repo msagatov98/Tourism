@@ -1,0 +1,50 @@
+plugins {
+    alias(libs.plugins.android.test)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.baselineprofile)
+}
+
+android {
+    namespace 'org.example.project.baselineprofile'
+    compileSdk 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    defaultConfig {
+        minSdk 28
+        targetSdk 34
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    targetProjectPath = ":composeApp"
+
+}
+
+baselineProfile {
+    useConnectedDevices = true
+}
+
+dependencies {
+    implementation libs.androidx.junit
+    implementation libs.androidx.espresso.core
+    implementation libs.androidx.uiautomator
+    implementation libs.androidx.benchmark.macro.junit4
+}
+
+androidComponents {
+    onVariants(selector().all()) { v ->
+        def artifactsLoader = v.artifacts.getBuiltArtifactsLoader()
+        v.instrumentationRunnerArguments.put(
+                "targetAppId",
+                v.testedApks.map { artifactsLoader.load(it)?.applicationId }
+        )
+    }
+}

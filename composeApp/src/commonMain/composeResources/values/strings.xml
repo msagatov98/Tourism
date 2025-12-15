@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="empty" />
+
+    <!-- **** Login **** -->
+    <string name="login">Login</string>
+
+    <string name="start_screen_login">Log in</string>
+    <string name="start_screen_create_account">Create Account</string>
+
+    <!-- **** Register **** -->
+    <string name="registrationRegister">Register</string>
+    <string name="registrationPlaceholderEmail">Email</string>
+    <string name="registrationPlaceholderPhone">Phone</string>
+    <string name="registrationPlaceholderLanguage">Language</string>
+    <string name="registrationPlaceholderCountry">Country</string>
+    <string name="registrationPlaceholderAgeGroup">Age group</string>
+    <string name="registrationPlaceholderTravellingType">Travelling type</string>
+
+    <!-- Respublica -->
+    <string name="appName">Respublica</string>
+
+    <string name="menuTitle">Меню</string>
+    <string name="menuMain">Главная</string>
+    <string name="menuAboutParty">О партии</string>
+    <string name="menuPartyFaction">Партийная фракция</string>
+    <string name="menuRegions">Регионы</string>
+    <string name="menuPressCenter">Пресс-центр</string>
+    <string name="menuContacts">Контакты</string>
+</resources>

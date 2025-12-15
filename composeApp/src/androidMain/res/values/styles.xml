@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_background</item>
+        <item name="postSplashScreenTheme">@style/Theme.AppCompat.NoActionBar</item>
+    </style>
+</resources>
